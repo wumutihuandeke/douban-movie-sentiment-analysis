@@ -1,23 +1,40 @@
 # Douban Movie Review Sentiment Analysis
 
-A Python-based natural language processing project for analyzing the sentiment of Chinese movie reviews collected from Douban.
+A Python-based natural language processing project for collecting and analyzing Chinese movie reviews from Douban.
 
 ## Project Overview
 
-This project explores sentiment patterns in Chinese movie reviews using web data collection, text preprocessing, sentiment analysis, and data visualization.
+This project analyzes Chinese movie reviews using web data collection, text preprocessing, sentiment analysis, exploratory data analysis, and data visualization.
 
 The project was developed as part of an undergraduate Big Data / Data Analysis course project.
+
+Five movies were selected for analysis, with up to 500 short reviews collected for each movie.
 
 ## Objectives
 
 The main objectives are to:
 
 - Collect movie review data from Douban
-- Clean and preprocess Chinese text
-- Perform sentiment analysis on user reviews
-- Analyze sentiment distributions and trends
-- Identify frequently discussed topics
-- Visualize the results
+- Extract review information including ratings, timestamps, and review content
+- Process Chinese movie review text
+- Perform sentiment classification using SnowNLP
+- Analyze sentiment distributions
+- Analyze frequently occurring words
+- Examine monthly review volume trends
+- Visualize the analysis results
+- Export the processed data for further analysis
+
+## Movies
+
+The project analyzes reviews from five movies:
+
+- 活着
+- 霸王别姬
+- 肖申克的救赎
+- 泰坦尼克号
+- 盗梦空间
+
+Up to 500 reviews were collected for each movie.
 
 ## Technologies
 
@@ -25,7 +42,6 @@ The main objectives are to:
 - Requests
 - BeautifulSoup
 - Pandas
-- NumPy
 - jieba
 - SnowNLP
 - Matplotlib
@@ -36,45 +52,65 @@ The main objectives are to:
 
 ### 1. Data Collection
 
-Movie review data were collected using Python-based web scraping techniques.
+Movie review data were collected from Douban using Python web scraping techniques.
 
-The project used:
+The project uses:
 
-- Requests
-- BeautifulSoup
+- Requests for HTTP requests
+- BeautifulSoup for HTML parsing
 
-to retrieve and parse review information.
+The following information is extracted from each review:
 
-### 2. Text Preprocessing
+- Movie name
+- Reviewer
+- Rating
+- Review time
+- Review content
 
-Chinese review text was processed using:
+### 2. Text Processing
 
-- Text cleaning
+Chinese movie review text is processed using:
+
 - Chinese word segmentation with jieba
-- Removal of unnecessary characters and content
+- Basic text processing for word cloud generation
 
 ### 3. Sentiment Analysis
 
-SnowNLP was used to calculate sentiment scores for Chinese movie reviews.
+SnowNLP is used to calculate sentiment scores for Chinese movie reviews.
 
-Reviews were subsequently analyzed according to their sentiment scores.
+Reviews are classified into three categories according to the sentiment score:
+
+- Positive: score > 0.6
+- Neutral: 0.4 ≤ score ≤ 0.6
+- Negative: score < 0.4
 
 ### 4. Exploratory Data Analysis
 
 The project analyzes:
 
 - Sentiment distribution
+- Review ratings
 - Frequently occurring words
-- Review characteristics
-- Sentiment trends
+- Monthly review volume
+- Review time patterns
 
 ### 5. Visualization
 
-The analysis results were visualized using:
+The analysis results are visualized using:
 
 - Matplotlib
 - Seaborn
 - WordCloud
+
+The project generates:
+
+- Sentiment distribution chart
+- Word cloud
+- Monthly review volume trend chart
+
+### 6. Data Export
+
+The processed analysis results are exported to an Excel file for further analysis.
 
 ## Project Structure
 
@@ -86,3 +122,29 @@ douban-movie-sentiment-analysis/
 ├── requirements.txt
 ├── .gitignore
 └── LICENSE
+
+## Output
+
+The project generates the following analysis results:
+
+- `情感分布.png`
+- `词云图.png`
+- `评论趋势.png`
+- `豆瓣电影短评分析结果.xlsx`
+
+## Learning Outcomes
+
+Through this project, I gained practical experience in:
+
+- Web data collection
+- HTML parsing
+- Chinese text processing
+- Natural language processing
+- Sentiment analysis
+- Exploratory data analysis
+- Data visualization
+- Data export and organization
+
+## Academic Context
+
+This project was completed as an undergraduate course project related to Big Data and Data Analysis.
